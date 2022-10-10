@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
-import Home from '../pages/Home';
 
 const Navigation = () => {
   return (
@@ -10,7 +9,7 @@ const Navigation = () => {
         <li>Home</li>
       </NavLink>
       <NavLink to={"/about"}>
-        <li>Home</li>
+        <li>About</li>
       </NavLink>
 
       </ul>
