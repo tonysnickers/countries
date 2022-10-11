@@ -4,6 +4,10 @@ import Card from './Card'
 
 const Countries = () => {
   const [data, setData] = useState([])
+  const [rangeValue, setRangeValue] = useState('250')
+  const radios = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+  const [selected, setSelected] = useState('')
+
   useEffect(() => {
     axios
       .get('https://restcountries.com/v3.1/all')
@@ -11,11 +15,33 @@ const Countries = () => {
   }, [])
   return (
     <div className="countries">
-      <h1>COUNTRIES</h1>
-      <ul>
-        {data.map((country, index) => (
-          <Card key={index} country={country} />
+      <ul className="radio-container">
+        <input
+          type="range"
+          min="1"
+          max="250"
+          onChange={(e) => setRangeValue(e.target.value)}
+        />
+        {radios.map((continent) => (
+          <li>
+            <input
+              type="radio"
+              name="continent"
+              id={continent}
+              onChange={(e) => setSelected(e.target.id)}
+            />
+            <label htmlFor={continent}>{continent}</label>
+          </li>
         ))}
+      </ul>
+
+      <ul>
+        {data
+          .filter((country) => country.continents[0] === selected)
+          .slice(0, rangeValue)
+          .map((country, index) => (
+            <Card key={index} country={country} />
+          ))}
       </ul>
     </div>
   )
