@@ -28,16 +28,21 @@ const Countries = () => {
               type="radio"
               name="continent"
               id={continent}
+              checked={continent === selected}
               onChange={(e) => setSelected(e.target.id)}
             />
             <label htmlFor={continent}>{continent}</label>
           </li>
         ))}
       </ul>
+      {selected && (
+        <button onClick={() => setSelected('')}>Annuler la recherche</button>
+      )}
 
       <ul>
         {data
-          .filter((country) => country.continents[0] === selected)
+          .filter((country) => country.continents[0].includes(selected))
+          .sort((a, b) => b.population - a.population)
           .slice(0, rangeValue)
           .map((country, index) => (
             <Card key={index} country={country} />
