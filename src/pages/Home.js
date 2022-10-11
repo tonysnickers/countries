@@ -1,8 +1,11 @@
 import React from 'react'
+import Countries from '../components/Countries'
 
 const Home = () => {
   return (
-    <div> Welcome Home</div>
+    <div>
+      <Countries/>
+    </div>
   )
 }
 
