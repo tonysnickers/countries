@@ -19,23 +19,6 @@
       "id": 3
     },
     {
-      "author": "toto",
-      "content": "Lorem, ipsum dolor sit amet hello world dfdsfllm,ml,",
-      "date": 1665575942438,
-      "updatedDate": 1665590942749,
-      "id": 4
-    },
-    {
-      "editContent": "Lorem, ipsum dolor sit amet",
-      "updated": 1665588453560,
-      "id": 5
-    },
-    {
-      "editContent": "Lorem, ipsum dolor sit amet consectetur ",
-      "updated": 1665587307722,
-      "id": 6
-    },
-    {
       "author": "tony",
       "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit. Odit quis adipisci illo sit porro recu",
       "date": 1665591064916,
@@ -43,13 +26,10 @@
       "id": 7
     },
     {
-      "author": "totoooooooo",
-      "content": "Lorem, ipsum t.\n\n",
-      "date": 1665593235891,
-      "updatedDate": 1665593249366,
+      "author": "tonyyyy",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit. Odit quis adipisci illo sit porro recusandae? Sequi, dolorum repellendus doloremque qui tempora beatae.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum",
+      "date": 1665596202961,
       "id": 8
-
     }
-
   ]
 }

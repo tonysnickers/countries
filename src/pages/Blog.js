@@ -31,6 +31,7 @@ const Blog = () => {
       setAuthor("")
       setContent("")
       getData()
+      window.location.reload()
     }
   }
 
