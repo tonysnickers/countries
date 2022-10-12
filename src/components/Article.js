@@ -18,28 +18,28 @@ const Article = ({ article }) => {
   }
 
   const handleEdit = () => {
+    console.log(editing)
     const data = {
       author: article.author,
-      content: editContent,
-      date: Date.now()
+      content: editContent ? editContent : article.content,
+      date: article.date,
+      updatedDate: Date.now(),
     }
-    axios.put('http://localhost:3004/articles/' + article.id, data).then(() =>{
-      setEditing(true)
-
+    axios.put('http://localhost:3004/articles/' + article.id, data).then(() => {
+      setEditing(false)
     })
   }
 
 
-
-
   return (
-    <div className="article">
+    <div className="article" style={{background: editing ? "#f3feff" : "withe"}}>
       <div className="card-header">
         <h3>{article.author}</h3>
         <em>Posté le: {dateFormater(article.date)}</em>
       </div>
       {editing ? (
         <textarea
+        autoFocus
           defaultValue={editContent ? editContent : article.content}
           onChange={(e) => setEditContent(e.target.value)}
         ></textarea>
