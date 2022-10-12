@@ -14,7 +14,7 @@ const Countries = () => {
       .then((res) => setData(res.data))
   }, [])
   return (
-    <div className="countries">
+    <div className="countries" style={{ margin: "30px"}}>
       <ul className="radio-container">
         <input
           type="range"
