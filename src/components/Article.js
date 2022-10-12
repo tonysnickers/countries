@@ -30,10 +30,12 @@ const Article = ({ article }) => {
     })
   }
 
+
   const handleDelete = () => {
     axios.delete('http://localhost:3004/articles/' + article.id);
     window.location.reload()
   }
+
 
   return (
     <div className="article" style={{background: editContent ? "#f3feff" : "withe"}}>
