@@ -30,6 +30,7 @@ const Article = ({ article }) => {
     })
   }
 
+
   return (
     <div className="article" style={{background: editing ? "#f3feff" : "withe"}}>
       <div className="card-header">
