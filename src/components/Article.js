@@ -18,16 +18,20 @@ const Article = ({ article }) => {
   }
 
   const handleEdit = () => {
-    setEditing(true)
-    console.log(editing)
-  }
+    const data = {
+      author: article.author,
+      content: editContent,
+      date: Date.now()
+    }
+    axios.put('http://localhost:3004/articles/' + article.id, data).then(() =>{
+      setEditing(true)
 
-  const handleUpdate = () => {
-    axios.put('http://localhost:3004/articles/' + article.id, {
-      editContent,
-      updated:Date.now()
     })
   }
+
+
+
+
   return (
     <div className="article">
       <div className="card-header">
@@ -36,15 +40,15 @@ const Article = ({ article }) => {
       </div>
       {editing ? (
         <textarea
-          defaultValue={article.content}
+          defaultValue={editContent ? editContent : article.content}
           onChange={(e) => setEditContent(e.target.value)}
         ></textarea>
       ) : (
-        <p>{article.content}</p>
+        <p>{editContent ? editContent : article.content}</p>
       )}
       <div className="btn-container">
         {editing ? (
-          <button onClick={() => handleUpdate()}>Valider</button>
+          <button onClick={() => handleEdit()}>Valider</button>
         ) : (
           <button onClick={() => setEditing(true)}>Edit</button>
         )}
